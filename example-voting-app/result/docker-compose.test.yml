@@ -1,7 +1,5 @@
 version: '2'
-
 services:
-
   sut:
     build: ./tests/
     depends_on:
@@ -60,3 +58,4 @@ volumes:
 networks:
   front-tier:
   back-tier:
+  
