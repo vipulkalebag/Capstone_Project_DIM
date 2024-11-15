@@ -15,7 +15,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: 654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo/result:40
+      - image: 654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo:2/result:2
         name: result
         ports:
         - containerPort: 80
