@@ -42,7 +42,7 @@ for SERVICE in "${MICROSERVICES[@]}"; do
   # DEPLOYMENT_FILE="Capstone_Project_DIM/example-voting-app/kube-spec/$SERVICE-deployment.yml"
 
   # Replace the image tag in the corresponding Kubernetes deployment file :$IMAGE_TAG
-  sed -i "s|image:.*|image: $ECR_REPO_URL:$IMAGE_TAG|g" "./kube-spec/$SERVICE-deployment.yml"
+  sed -i "s|image:.*|image: ${ECR_REPO_URL}:${IMAGE_TAG}|g" "./kube-spec/$SERVICE-deployment.yml"
   # if [ -f "$DEPLOYMENT_FILE" ]; then
   #   # Replace the image tag in the corresponding Kubernetes deployment file
   #   sed -i "s|image:.*|image: $ECR_REPO_URL/$SERVICE:$IMAGE_TAG|g" "$DEPLOYMENT_FILE"
