@@ -25,7 +25,7 @@ MICROSERVICES=("result" "vote" "worker")
 # Loop through each microservice and update the image tag in its Kubernetes manifest file
 for SERVICE in "${MICROSERVICES[@]}"; do
   # Construct the image tag using only the build number
-  IMAGE_TAG="${BUILD_NUMBER}"  # Use only the build number as the image tag
+  IMAGE_TAG="${BUILD_NUMBER[$SERVICE]}"  # Use only the build number as the image tag
   # Get the ECR repo URL for the current service
   ECR_REPO_URL="${ECR_REPOS[$SERVICE]}"
 # chmod -R +rw /Capstone_Project_DIM/
