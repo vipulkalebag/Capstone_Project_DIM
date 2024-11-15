@@ -26,7 +26,8 @@ phases:
       - cd ../kube-spec/
       - chmod -R 777 ../kube-spec/
       - cd ../update_script/
-      - chmod +x update_script/update-kube-spec.sh
+      # - chmod +x update_script/update-kube-spec.sh
+      - chmod +x example-voting-app/update_script/update-kube-spec.sh
       - ./update-kube-spec.sh vote $BUILD_NUMBER
 
 
