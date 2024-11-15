@@ -8,7 +8,7 @@ phases:
       # - git config --global user.name "vipul"
       - export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
       - echo Build starting
-      - git clone https://github.com/vipulkalebag/Capstone_Project_DIM.git
+      - git clone https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
       - ls -l example-voting-app/kube-spec/
   build:
     commands:
