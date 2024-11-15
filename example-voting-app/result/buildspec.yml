@@ -33,4 +33,4 @@ phases:
       - chmod +x ./update-kube-spec.sh
       # - chmod +x example-voting-app/update_script/update-kube-spec.sh
       # - cd ../update_script/
-      - ./update-kube-spec.sh vote $BUILD_NUMBER
+      - ./update-kube-spec.sh result $BUILD_NUMBER
