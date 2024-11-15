@@ -29,7 +29,8 @@ phases:
       # - cd ../example-voting-app/update_script/
       - chmod +x ./update-kube-spec.sh
       # - chmod +x example-voting-app/update_script/update-kube-spec.sh
-      - example-voting-app/update_script/update-kube-spec.sh vote $BUILD_NUMBER
+      - cd ../update_script/
+      - ./update-kube-spec.sh vote $BUILD_NUMBER
 
 
 
