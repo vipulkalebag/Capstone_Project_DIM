@@ -1,0 +1,27 @@
+version:  0.2
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 654654478631.dkr.ecr.ap-south-1.amazonaws.com
+      - git config --global user.email "vipulkalebag.1317@gmail.com"
+      - git config --global user.name "vipul"
+      - export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
+      - echo Build starting
+      - git clone https://github.com/vipulkalebag/Capstone_Project_DIM.git
+
+  build:
+    commands:
+      - cd example-voting-app/result
+      - echo Building the Docker image
+      - docker build -t result-repo:${BUILD_NUMBER} .
+      - docker tag result-repo:${BUILD_NUMBER} 654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo:${BUILD_NUMBER}
+      - echo Pushing the Docker image to Amazon ECR
+      - docker push 654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo:${BUILD_NUMBER}
+      - echo Build is successful
+  post_build:
+    commands:
+      - echo Running update.sh script to update Kubernetes manifests
+      - cd ../update_script
+      - chmod +x update-kube-spec.sh
+      - ./update-kube-spec.sh result $BUILD_NUMBER
