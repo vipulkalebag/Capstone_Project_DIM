@@ -7,6 +7,9 @@ git clone https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
 cd example-voting-app || exit 1
 
 ls -a
+
+- git config --global user.email "vipulkalebag.1317@gmail.com"
+- git config --global user.name "vipul"
 # Export the build number from CodeBuild
 export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
 
@@ -54,10 +57,10 @@ cat "../kube-spec/$SERVICE-deployment.yml"
 # Add the modified files to Git
 git add .
 
-# git remote set-url --push origin https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
 # Commit the changes
 git commit -m "Update Kubernetes manifests for microservices with ECR image"
 
+git remote set-url --push origin https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
 # Push the changes back to the Git repository
 git push 
 # git push -u origin main

@@ -4,8 +4,8 @@ phases:
     commands:
       - echo Logging in to Amazon ECR
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 654654478631.dkr.ecr.ap-south-1.amazonaws.com
-      - git config --global user.email "vipulkalebag.1317@gmail.com"
-      - git config --global user.name "vipul"
+      # - git config --global user.email "vipulkalebag.1317@gmail.com"
+      # - git config --global user.name "vipul"
       - export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
       - echo Build starting
       # - git clone https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
@@ -29,7 +29,7 @@ phases:
       # - cd ../example-voting-app/update_script/
       - chmod +x ./update-kube-spec.sh
       # - chmod +x example-voting-app/update_script/update-kube-spec.sh
-      - cd ../update_script/
+      # - cd ../update_script/
       - ./update-kube-spec.sh vote $BUILD_NUMBER
 
 
