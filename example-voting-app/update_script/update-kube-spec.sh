@@ -11,7 +11,7 @@ ls -a Capstone_Project_DIM
 
 
 # Export the build number from CodeBuild
-# export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
+export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
 
 # List of microservices and their corresponding ECR repository URLs
 declare -A ECR_REPOS
@@ -20,9 +20,9 @@ ECR_REPOS["vote"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/vote-repo"
 ECR_REPOS["worker"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/worker-repo"
 
 declare -A IMAGE_TAGS
-IMAGE_TAGS["result"]="latest-result-tag" # replace with actual latest tag
-IMAGE_TAGS["vote"]="latest-vote-tag"     # replace with actual latest tag
-IMAGE_TAGS["worker"]="latest-worker-tag"  # replace with actual latest tag
+IMAGE_TAGS["result"]="result-repo:${BUILD_NUMBER}" # replace with actual latest tag
+IMAGE_TAGS["vote"]="vote-repo:${BUILD_NUMBER}"     # replace with actual latest tag
+IMAGE_TAGS["worker"]="worker-repo:${BUILD_NUMBER}"  # replace with actual latest tag
 
 
 # List of microservices (adjust these names to match your services)
