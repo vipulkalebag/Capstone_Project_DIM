@@ -15,9 +15,9 @@ export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
 
 # List of microservices and their corresponding ECR repository URLs
 declare -A ECR_REPOS
-ECR_REPOS["result"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo"
-ECR_REPOS["vote"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/vote-repo"
-ECR_REPOS["worker"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/worker-repo"
+ECR_REPOS["result"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo:${BUILD_NUMBER}"
+ECR_REPOS["vote"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/vote-repo:${BUILD_NUMBER}"
+ECR_REPOS["worker"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/worker-repo:${BUILD_NUMBER}"
 
 # List of microservices (adjust these names to match your services)
 MICROSERVICES=("result" "vote" "worker")
