@@ -65,9 +65,9 @@ git add .
 # Commit the changes
 git commit -m "Update Kubernetes manifests for microservices with ECR image"
 
-git remote set-url origin https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
+# git remote set-url origin https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
 # Push the changes back to the Git repository
 # git push 
-git push -u origin main
+git push origin main
 
 # rm -rf /Capstone_Project_DIM/
