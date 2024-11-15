@@ -4,9 +4,11 @@ set -x  # Enable debugging to print each command being executed.
 
 git clone https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
 
-cd example-voting-app || exit 1
+# cd example-voting-app || exit 1
+cd Capstone_Project_DIM/example-voting-app || exit 1
 
-ls -a
+ls -a Capstone_Project_DIM
+
 
 - git config --global user.email "vipulkalebag.1317@gmail.com"
 - git config --global user.name "vipul"
