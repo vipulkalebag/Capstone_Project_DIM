@@ -10,8 +10,6 @@ cd Capstone_Project_DIM/example-voting-app || exit 1
 ls -a Capstone_Project_DIM
 
 
-- git config --global user.email "vipulkalebag.1317@gmail.com"
-- git config --global user.name "vipulkalebag"
 # Export the build number from CodeBuild
 export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
 
@@ -44,7 +42,8 @@ for SERVICE in "${MICROSERVICES[@]}"; do
   #   echo "Error: Kubernetes manifest for $SERVICE not found at $DEPLOYMENT_FILE!"
   # fi
 done
-cat "../kube-spec/$SERVICE-deployment.yml"
+
+cat "./kube-spec/$SERVICE-deployment.yml"
 
 # export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
@@ -57,6 +56,10 @@ cat "../kube-spec/$SERVICE-deployment.yml"
 # git pull origin main --rebase
 
 # Add the modified files to Git
+
+- git config --global user.email "vipulkalebag.1317@gmail.com"
+- git config --global user.name "vipulkalebag"
+
 git add .
 
 # Commit the changes
