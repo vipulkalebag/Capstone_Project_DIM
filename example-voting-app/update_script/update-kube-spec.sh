@@ -19,15 +19,22 @@ ECR_REPOS["result"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo"
 ECR_REPOS["vote"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/vote-repo"
 ECR_REPOS["worker"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/worker-repo"
 
+declare -A IMAGE_TAGS
+IMAGE_TAGS["result"]="latest-result-tag" # replace with actual latest tag
+IMAGE_TAGS["vote"]="latest-vote-tag"     # replace with actual latest tag
+IMAGE_TAGS["worker"]="latest-worker-tag"  # replace with actual latest tag
+
+
 # List of microservices (adjust these names to match your services)
 MICROSERVICES=("result" "vote" "worker")
 
 # Loop through each microservice and update the image tag in its Kubernetes manifest file
 for SERVICE in "${MICROSERVICES[@]}"; do
   # Construct the image tag using only the build number
-  IMAGE_TAG="${BUILD_NUMBER}"  # Use only the build number as the image tag
+  # IMAGE_TAG="${BUILD_NUMBER}"  # Use only the build number as the image tag
   # Get the ECR repo URL for the current service
   ECR_REPO_URL="${ECR_REPOS[$SERVICE]}"
+  IMAGE_TAG="${IMAGE_TAGS[$SERVICE]}"
   # [$SERVICE]
 # chmod -R +rw /Capstone_Project_DIM/
 
