@@ -21,7 +21,7 @@ phases:
       - echo Build is successful
   post_build:
     commands:
-      # - echo Running update.sh script to update Kubernetes manifests
+      # - echo Running update.sh script to update Kubernetes manifest
       # - cd ../update_script
       # - chmod +x update-kube-spec.sh
       # - ./update-kube-spec.sh result $BUILD_NUMBER
