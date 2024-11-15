@@ -57,17 +57,17 @@ cat "./kube-spec/$SERVICE-deployment.yml"
 
 # Add the modified files to Git
 
-- git config --global user.email "vipulkalebag.1317@gmail.com"
-- git config --global user.name "vipulkalebag"
+git config --global user.email "vipulkalebag.1317@gmail.com"
+git config --global user.name "vipulkalebag"
 
 git add .
 
 # Commit the changes
 git commit -m "Update Kubernetes manifests for microservices with ECR image"
 
-git remote set-url --push origin https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
+# git remote set-url --push origin https://$GITHUB_TOKEN@github.com/vipulkalebag/Capstone_Project_DIM.git
 # Push the changes back to the Git repository
-git push 
-# git push -u origin main
+# git push 
+git push -u origin main
 
 # rm -rf /Capstone_Project_DIM/
