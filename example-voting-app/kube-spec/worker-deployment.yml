@@ -16,7 +16,7 @@
       spec:
         containers:
         - name: worker
-          image: 654654478631.dkr.ecr.ap-south-1.amazonaws.com/worker-repo/worker:31
+          image: 654654478631.dkr.ecr.ap-south-1.amazonaws.com/worker-repo/worker:32
         imagePullSecrets:
         - name: ecr-image-pull-secret
         
