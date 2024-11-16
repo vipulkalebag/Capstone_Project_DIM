@@ -15,18 +15,18 @@ export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
 
 # List of microservices and their corresponding ECR repository URLs
 declare -A ECR_REPOS
-ECR_REPOS["result"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo"
+# ECR_REPOS["result"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo"
 ECR_REPOS["vote"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/vote-repo"
 ECR_REPOS["worker"]="654654478631.dkr.ecr.ap-south-1.amazonaws.com/worker-repo"
 
 declare -A IMAGE_TAGS
-IMAGE_TAGS["result"]="result-repo:${BUILD_NUMBER}" # replace with actual latest tag
+# IMAGE_TAGS["result"]="result-repo:${BUILD_NUMBER}" # replace with actual latest tag
 IMAGE_TAGS["vote"]="vote-repo:${BUILD_NUMBER}"     # replace with actual latest tag
 IMAGE_TAGS["worker"]="worker-repo:${BUILD_NUMBER}"  # replace with actual latest tag
 
 
 # List of microservices (adjust these names to match your services)
-MICROSERVICES=("result" "vote" "worker")
+MICROSERVICES=( "vote" "worker")
 
 # Loop through each microservice and update the image tag in its Kubernetes manifest file
 for SERVICE in "${MICROSERVICES[@]}"; do
