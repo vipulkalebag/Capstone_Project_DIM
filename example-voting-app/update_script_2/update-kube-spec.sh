@@ -21,10 +21,19 @@ DEPLOYMENT_FILE="./kube-spec/result-deployment.yml"
 if [ -f "$DEPLOYMENT_FILE" ]; then
   # Update the image tag in the Kubernetes deployment file
   sed -i "s|image:.*|image: ${ECR_REPO_URL}:${IMAGE_TAG}|g" "$DEPLOYMENT_FILE"
+  
+  echo "Updated deployment file for result."
+
+  # Print the updated deployment file for verification
+  cat "$DEPLOYMENT_FILE"
+else
+  echo "Error: Deployment file $DEPLOYMENT_FILE not found!"
+  exit 1
+fi
 
 #   echo "Updated deployment file for result."
 
-cat "./kube-spec/$DEPLOYMENT_FILE-deployment.yml"
+# cat "./kube-spec/$DEPLOYMENT_FILE-deployment.yml"
 
 # export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
