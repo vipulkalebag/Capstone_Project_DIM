@@ -10,7 +10,7 @@ ls -a Capstone_Project_DIM
 
 # Variables for vote-repo
 ECR_REPO_URL="654654478631.dkr.ecr.ap-south-1.amazonaws.com/vote-repo"
-IMAGE_TAG="vote-repo:${BUILD_NUMBER}" # Replace ${BUILD_NUMBER} dynamically
+IMAGE_TAG="${BUILD_NUMBER}" # Replace ${BUILD_NUMBER} dynamically
 DEPLOYMENT_FILE="./kube-spec/vote-deployment.yml"
 
 # Check if the deployment file exists

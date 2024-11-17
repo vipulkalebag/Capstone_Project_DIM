@@ -11,7 +11,7 @@ ls -a Capstone_Project_DIM
 
 # Variables for worker-repo
 ECR_REPO_URL="654654478631.dkr.ecr.ap-south-1.amazonaws.com/worker-repo"
-IMAGE_TAG="worker-repo:${BUILD_NUMBER}" # Replace ${BUILD_NUMBER} dynamically
+IMAGE_TAG="${BUILD_NUMBER}" # Replace ${BUILD_NUMBER} dynamically
 DEPLOYMENT_FILE="./kube-spec/worker-deployment.yml"
 
 # Check if the deployment file exists

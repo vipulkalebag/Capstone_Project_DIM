@@ -13,7 +13,7 @@ export BUILD_NUMBER=${CODEBUILD_BUILD_NUMBER}
 
 ECR_REPO_URL="654654478631.dkr.ecr.ap-south-1.amazonaws.com/result-repo"
 
-IMAGE_TAG="result-repo:${BUILD_NUMBER}" # Replace ${BUILD_NUMBER} dynamically
+IMAGE_TAG="${BUILD_NUMBER}" # Replace ${BUILD_NUMBER} dynamically
 
 DEPLOYMENT_FILE="./kube-spec/result-deployment.yml"
 
